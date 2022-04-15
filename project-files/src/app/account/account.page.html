@@ -1,0 +1,81 @@
+<ion-header class="header_bg bg-transparent">
+  <ion-toolbar>
+    <ion-title>{{'account' | translate}}</ion-title>
+  </ion-toolbar>
+  <div class="profile_box d-flex" (click)="myprofile()">
+    <div class="profile_img">
+      <img src="assets/imgs/07.png" />
+    </div>
+    <div class="name_box">
+      <h2 class="animate__animated animate__fadeInUp">Divya Sree</h2>
+      <h3 class="animate__animated animate__fadeInUp">
+        {{'view_profile' | translate}}
+      </h3>
+    </div>
+  </div>
+  <div class="buy_this_app" *ngIf="config.demoMode" (click)="buyAppAction()">
+    <h2>
+      <ion-icon class="zmdi zmdi-shopping-cart"></ion-icon>
+      {{"buy_this_app" | translate}}
+    </h2>
+  </div>
+</ion-header>
+<ion-content fullscreen>
+  <ion-list lines="none">
+    <ion-item class="animate__animated animate__fadeInUp" (click)="favorited()">
+      <div class="icon_box" slot="start">
+        <img src="assets/imgs/ic_settings.png" />
+      </div>
+      <h2>{{'favorites' | translate}}</h2>
+    </ion-item>
+    <ion-item
+      class="animate__animated animate__fadeInUp"
+      (click)="notification()"
+    >
+      <div class="icon_box" slot="start">
+        <img src="assets/imgs/ic_invite.png" />
+      </div>
+      <h2>{{'notifications' | translate}}</h2>
+    </ion-item>
+    <ion-item class="animate__animated animate__fadeInUp" (click)="help()">
+      <div class="icon_box" slot="start">
+        <img src="assets/imgs/ic_help.png" />
+      </div>
+      <h2>{{'need_help' | translate}}</h2>
+    </ion-item>
+    <ion-item class="animate__animated animate__fadeInUp">
+      <div class="icon_box" slot="start">
+        <img src="assets/imgs/ic_rate.png" />
+      </div>
+      <h2>{{'rate_us' | translate}}</h2>
+    </ion-item>
+    <ion-item class="animate__animated animate__fadeInUp" (click)="condition()">
+      <div class="icon_box" slot="start">
+        <img src="assets/imgs/ic_guideline.png" />
+      </div>
+      <h2>{{'terms_conditions' | translate}}</h2>
+    </ion-item>
+
+    <ion-item
+      class="animate__animated animate__fadeInUp"
+      (click)="change_language()"
+    >
+      <div class="icon_box" slot="start">
+        <img src="assets/imgs/ic_language.png" />
+      </div>
+      <h2>{{'select_languge' | translate}}</h2>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer
+  class="ion-no-border animate__animated animate__fadeInUp"
+  *ngIf="config.demoMode"
+>
+  <div class="developed_by d-flex" (click)="developed_by()">
+    <h2>{{"developed_by" | translate}}</h2>
+    <div class="img_box ion-text-end end">
+      <img src="assets/imgs/opus.png" />
+    </div>
+  </div>
+</ion-footer>

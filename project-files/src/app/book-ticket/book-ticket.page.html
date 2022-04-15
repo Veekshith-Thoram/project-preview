@@ -1,0 +1,335 @@
+<ion-header class="header_bg bg-transparent">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text="" icon="arrow-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title>{{'book_a_ticket' | translate}}</ion-title>
+    </ion-toolbar>
+
+    <ion-segment (ionChange)="segmentChanged()" [(ngModel)]="segment" lines="none">
+        <ion-segment-button value="0">
+            <span>
+                <img src="assets/imgs/ic_train.png">
+                {{'train_ticket' | translate}}
+            </span>
+        </ion-segment-button>
+        <ion-segment-button value="1">
+            <span>
+                <img src="assets/imgs/ic_flights.png">
+                {{'flights' | translate}}
+            </span>
+        </ion-segment-button>
+        <ion-segment-button value="2">
+            <span>
+                <img src="assets/imgs/ic_bus.png">
+                {{'bus' | translate}}
+            </span>
+        </ion-segment-button>
+
+    </ion-segment>
+</ion-header>
+
+<ion-content>
+    <div class="tab_container">
+        <ion-slides #slides (ionSlideDidChange)="slideChanged()">
+            <ion-slide>
+                <div class="form">
+                    <ion-list lines="none" style="padding-top: 20px">
+                        <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                            <ion-label position="fixed">{{'from' | translate}}</ion-label>
+                            <ion-select class="ion-text-end" mode="md" interface="action-sheet" placeholder="">
+                                <ion-select-option value="idea">Brooklyn</ion-select-option>
+                                <ion-select-option value="vodafone">Smithtowm </ion-select-option>
+                            </ion-select>
+                        </ion-item>
+
+                        <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                            <ion-label position="fixed">{{'to' | translate}}</ion-label>
+                            <ion-select class="ion-text-end" mode="md" interface="action-sheet" placeholder="">
+                                <ion-select-option value="idea">Brooklyn</ion-select-option>
+                                <ion-select-option value="vodafone">Smithtowm </ion-select-option>
+                            </ion-select>
+                        </ion-item>
+
+                        <ion-item class="animate__animated animate__fadeInUp item-datetime" lines="none" id="open-modal">
+                            <ion-icon class="zmdi zmdi-calendar-alt ion-text-start" slot="start"></ion-icon>
+                            <!-- <ion-datetime mode="md" displayFormat="DD MMM YYYY " placeholder="{{'depart_date' | translate}}"></ion-datetime> -->
+                            <h6> {{ formattedString }}</h6>
+                            <h4 slot="end">
+                                <span class="active"> {{'today' | translate}}</span> |
+                                <span>{{'tommarrow' | translate}}</span>
+                            </h4>
+                        </ion-item>
+
+                        <ion-row class="type_of_sheet animate__animated animate__fadeInUp">
+                            <ion-col size="3">
+                                <div class="sheets ion-text-center">
+                                    <div class="img_box">
+                                        <img src="assets/imgs/ac.png">
+                                    </div>
+                                    <p>AC</p>
+                                </div>
+                            </ion-col>
+                            <ion-col size="3">
+                                <div class="sheets ion-text-center">
+                                    <div class="img_box">
+                                        <img src="assets/imgs/non-sc.png">
+                                    </div>
+                                    <p>Non AC</p>
+                                </div>
+                            </ion-col>
+                            <ion-col size="3">
+                                <div class="sheets ion-text-center">
+                                    <div class="img_box">
+                                        <img src="assets/imgs/seater.png">
+                                    </div>
+                                    <p>Seater</p>
+                                </div>
+                            </ion-col>
+                            <ion-col size="3" class="active">
+                                <div class="sheets ion-text-center">
+                                    <div class="img_box">
+                                        <img src="assets/imgs/sleeper.png">
+                                    </div>
+                                    <p>Sleeper</p>
+                                </div>
+                            </ion-col>
+                        </ion-row>
+                    </ion-list>
+                    <ion-button size="large" shape="block" class="btn animate__animated animate__fadeInUp" (click)="paymentsuccessful()">{{'search_trains' | translate}}</ion-button>
+                </div>
+            </ion-slide>
+
+            <ion-slide>
+                <div class="form">
+                    <ion-list lines="none">
+                        <ion-item class="toggle_box animate__animated animate__fadeInUp">
+                            <div class="item_inner d-flex ">
+                                <p class="ion-text-end">{{'one_way' | translate}}</p>
+                                <ion-toggle mode="md" checked></ion-toggle>
+                                <p class="ion-text-start">{{'round_trip' | translate}}</p>
+                            </div>
+                        </ion-item>
+
+                        <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                            <ion-label position="fixed">{{'from' | translate}}</ion-label>
+                            <ion-select class="ion-text-end" mode="md" interface="action-sheet" placeholder="">
+                                <ion-select-option value="idea">New York (JFK)</ion-select-option>
+                                <ion-select-option value="vodafone">Toronto (YTZ) </ion-select-option>
+                            </ion-select>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                            <ion-label position="fixed">{{'to' | translate}}</ion-label>
+                            <ion-select class="ion-text-end" mode="md" interface="action-sheet" placeholder="">
+                                <ion-select-option value="idea">New York (JFK)</ion-select-option>
+                                <ion-select-option value="vodafone">Toronto (YTZ) </ion-select-option>
+                            </ion-select>
+                        </ion-item>
+
+                        <ion-row class="datetime_row animate__animated animate__fadeInUp">
+                            <ion-col size="6">
+                                <ion-item lines="none" id="open-modal2">
+                                    <ion-icon class="zmdi zmdi-calendar-alt ion-text-start" slot="start"></ion-icon>
+                                    <!-- <ion-datetime mode="md" displayFormat="DD MMM YYYY " placeholder="{{'depart_date' | translate}}"></ion-datetime> -->
+                                    <h6> {{ formattedString }}</h6>
+                                </ion-item>
+                            </ion-col>
+
+                            <ion-col size="6">
+                                <ion-item lines="none" id="open-modal3">
+                                    <ion-icon class="zmdi zmdi-calendar-alt ion-text-start" slot="start"></ion-icon>
+                                    <!-- <ion-datetime mode="md" displayFormat="DD MMM YYYY " placeholder="{{'return_date' | translate}}"></ion-datetime> -->
+                                    <h6> {{ formattedStringTwo }}</h6>
+                                </ion-item>
+                            </ion-col>
+                        </ion-row>
+
+                        <ion-row class="input_row  animate__animated animate__fadeInUp">
+                            <ion-col size="4">
+                                <ion-item lines="none">
+                                    <ion-input type="text" placeholder="{{'abult' | translate}}"></ion-input>
+                                </ion-item>
+                            </ion-col>
+                            <ion-col size="4">
+                                <ion-item lines="none">
+                                    <ion-input type="text" placeholder="{{'child' | translate}}"></ion-input>
+                                </ion-item>
+                            </ion-col>
+                            <ion-col size="4">
+                                <ion-item lines="none">
+                                    <ion-input type="text" placeholder="{{'infant' | translate}}"></ion-input>
+                                </ion-item>
+                            </ion-col>
+                        </ion-row>
+
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <ion-label position="fixed">{{'class' | translate}}</ion-label>
+                            <ion-select class="ion-text-end" mode="md" interface="action-sheet" placeholder="">
+                                <ion-select-option value="idea">Business</ion-select-option>
+                                <ion-select-option value="vodafone">Economy</ion-select-option>
+                            </ion-select>
+                        </ion-item>
+                    </ion-list>
+
+                    <ion-button size="large" shape="block" class="btn animate__animated animate__fadeInUp" (click)="paymentsuccessful()">{{'search_flights' | translate}}</ion-button>
+                </div>
+            </ion-slide>
+
+            <ion-slide>
+                <div class="form">
+                    <ion-list lines="none" style="padding-top: 20px">
+                        <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                            <ion-label position="fixed">{{'from' | translate}}</ion-label>
+                            <ion-select class="ion-text-end" mode="md" interface="action-sheet" placeholder="">
+                                <ion-select-option value="idea">Brooklyn</ion-select-option>
+                                <ion-select-option value="vodafone">Smithtowm </ion-select-option>
+                            </ion-select>
+                        </ion-item>
+                        <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                            <ion-label position="fixed">{{'to' | translate}}</ion-label>
+                            <ion-select class="ion-text-end" mode="md" interface="action-sheet" placeholder="">
+                                <ion-select-option value="idea">Brooklyn</ion-select-option>
+                                <ion-select-option value="vodafone">Smithtowm </ion-select-option>
+                            </ion-select>
+                        </ion-item>
+
+
+                        <ion-item class="animate__animated animate__fadeInUp item-datetime" lines="none" id="open-modal4">
+                            <ion-icon class="zmdi zmdi-calendar-alt ion-text-start" slot="start"></ion-icon>
+                            <!-- <ion-datetime mode="md" displayFormat="DD MMM YYYY " placeholder="{{'depart_date' | translate}}"></ion-datetime> -->
+                            <h6> {{ formattedString }}</h6>
+                            <h4 slot="end">
+                                <span class="active"> {{'today' | translate}}</span> |
+                                <span>{{'tommarrow' | translate}}</span>
+                            </h4>
+                        </ion-item>
+                        <ion-row class="input_row  animate__animated animate__fadeInUp">
+                            <ion-col size="4">
+                                <ion-item lines="none">
+                                    <ion-input type="text" placeholder="{{'abult' | translate}}"></ion-input>
+                                </ion-item>
+                            </ion-col>
+                            <ion-col size="4">
+                                <ion-item lines="none">
+                                    <ion-input type="text" placeholder="{{'child' | translate}}"></ion-input>
+                                </ion-item>
+                            </ion-col>
+                            <ion-col size="4">
+                                <ion-item lines="none">
+                                    <ion-input type="text" placeholder="{{'infant' | translate}}"></ion-input>
+                                </ion-item>
+                            </ion-col>
+                        </ion-row>
+
+                        <ion-row class="type_of_sheet animate__animated animate__fadeInUp">
+                            <ion-col size="3">
+                                <div class="sheets ion-text-center">
+                                    <div class="img_box">
+                                        <img src="assets/imgs/ac.png">
+                                    </div>
+                                    <p>AC</p>
+                                </div>
+                            </ion-col>
+                            <ion-col size="3">
+                                <div class="sheets ion-text-center">
+                                    <div class="img_box">
+                                        <img src="assets/imgs/non-sc.png">
+                                    </div>
+                                    <p>Non AC</p>
+                                </div>
+                            </ion-col>
+                            <ion-col size="3">
+                                <div class="sheets ion-text-center">
+                                    <div class="img_box">
+                                        <img src="assets/imgs/seater.png">
+                                    </div>
+                                    <p>Seater</p>
+                                </div>
+                            </ion-col>
+                            <ion-col size="3" class="active">
+                                <div class="sheets ion-text-center">
+                                    <div class="img_box">
+                                        <img src="assets/imgs/sleeper.png">
+                                    </div>
+                                    <p>Sleeper</p>
+                                </div>
+                            </ion-col>
+                        </ion-row>
+                    </ion-list>
+                    <ion-button size="large" shape="block" class="btn  animate__animated animate__fadeInUp" (click)="paymentsuccessful()">{{'search_buses' | translate}}</ion-button>
+                </div>
+            </ion-slide>
+        </ion-slides>
+    </div>
+
+
+    <ion-modal trigger="open-modal">
+        <ng-template>
+            <ion-content>
+                <ion-datetime mode="md" show-default-buttons="false" presentation="date" #datetime [value]="dateValue" size="cover" (ionChange)="dateChanged(datetime.value)">
+                    <!-- <div slot="title">My Custom Title</div> -->
+                    <ion-buttons slot="buttons">
+                        <ion-button (click)="reset()">{{'cancel' | translate}}</ion-button>
+                        <ion-button (click)="confirm()">{{'ok' | translate}}</ion-button>
+                    </ion-buttons>
+                </ion-datetime>
+            </ion-content>
+        </ng-template>
+    </ion-modal>
+
+    <ion-modal trigger="open-modal1">
+        <ng-template>
+            <ion-content>
+                <ion-datetime mode="md" show-default-buttons="false" presentation="date" #datetime [value]="dateValue" size="cover" (ionChange)="dateChanged(datetime.value)">
+                    <!-- <div slot="title">My Custom Title</div> -->
+                    <ion-buttons slot="buttons">
+                        <ion-button (click)="reset()">{{'cancel' | translate}}</ion-button>
+                        <ion-button (click)="confirm()">{{'ok' | translate}}</ion-button>
+                    </ion-buttons>
+                </ion-datetime>
+            </ion-content>
+        </ng-template>
+    </ion-modal>
+
+    <ion-modal trigger="open-modal2">
+        <ng-template>
+            <ion-content>
+                <ion-datetime mode="md" show-default-buttons="false" presentation="date" #datetime [value]="dateValue" size="cover" (ionChange)="dateChanged(datetime.value)">
+                    <!-- <div slot="title">My Custom Title</div> -->
+                    <ion-buttons slot="buttons">
+                        <ion-button (click)="reset()">{{'cancel' | translate}}</ion-button>
+                        <ion-button (click)="confirm()">{{'ok' | translate}}</ion-button>
+                    </ion-buttons>
+                </ion-datetime>
+            </ion-content>
+        </ng-template>
+    </ion-modal>
+
+    <ion-modal trigger="open-modal3">
+        <ng-template>
+            <ion-content>
+                <ion-datetime mode="md" show-default-buttons="false" presentation="date" #datetime [value]="dateValue" size="cover" (ionChange)="dateChangedTwo(datetime.value)">
+                    <!-- <div slot="title">My Custom Title</div> -->
+                    <ion-buttons slot="buttons">
+                        <ion-button (click)="reset()">{{'cancel' | translate}}</ion-button>
+                        <ion-button (click)="confirm()">{{'ok' | translate}}</ion-button>
+                    </ion-buttons>
+                </ion-datetime>
+            </ion-content>
+        </ng-template>
+    </ion-modal>
+
+    <ion-modal trigger="open-modal4">
+        <ng-template>
+            <ion-content>
+                <ion-datetime mode="md" show-default-buttons="false" presentation="date" #datetime [value]="dateValue" size="cover" (ionChange)="dateChanged(datetime.value)">
+                    <!-- <div slot="title">My Custom Title</div> -->
+                    <ion-buttons slot="buttons">
+                        <ion-button (click)="reset()">{{'cancel' | translate}}</ion-button>
+                        <ion-button (click)="confirm()">{{'ok' | translate}}</ion-button>
+                    </ion-buttons>
+                </ion-datetime>
+            </ion-content>
+        </ng-template>
+    </ion-modal>
+</ion-content>

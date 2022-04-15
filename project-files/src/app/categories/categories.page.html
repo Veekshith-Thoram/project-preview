@@ -1,0 +1,1080 @@
+<ion-header class="header_bg bg-transparent">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text="" icon="arrow-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title>
+            <div class="d-flex">
+                {{'shop_by_categories' | translate}}
+                <div class="icon_container end">
+                    <span class="icon_box" (click)=search()><img src="assets/imgs/ic_search_wt.png"></span>
+                    <span class="icon_box" style="padding-left: 11px; padding-right: 11px;"><img src="assets/imgs/ic_cart_wt.png">
+                        <ion-badge>2</ion-badge>
+                    </span>
+                </div>
+            </div>
+        </ion-title>
+    </ion-toolbar>
+
+    <ion-segment (ionChange)="segmentChanged()" [(ngModel)]="segment" lines="none" scrollable>
+        <ion-segment-button value="0">
+            {{'fashion' | translate}}
+        </ion-segment-button>
+        <ion-segment-button value="1">
+            {{'phones' | translate}}
+        </ion-segment-button>
+        <ion-segment-button value="2">
+            {{'devices' | translate}}
+        </ion-segment-button>
+        <ion-segment-button value="3">
+            {{'home_decor' | translate}}
+        </ion-segment-button>
+        <ion-segment-button value="4">
+            {{'health' | translate}}
+        </ion-segment-button>
+        <ion-segment-button value="5">
+            {{'appliances' | translate}}
+        </ion-segment-button>
+        <ion-segment-button value="6">
+            {{'furniture' | translate}}
+        </ion-segment-button>
+    </ion-segment>
+</ion-header>
+
+<ion-content class="bg_color">
+    <div class="tab_container">
+        <ion-slides #slides (ionSlideDidChange)="slideChanged()">
+            <ion-slide>
+                <ion-list lines="none">
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c3.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Men's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c4.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Women's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Skirts, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c5.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Kids Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c6.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Footwear</span></h2>
+                            <p>Shoe, Sandal, Sneaker & more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c7.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Accesories</span></h2>
+                            <p>Watch, Bags, Cover, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c8.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Jewelry</span></h2>
+                            <p>Necklaces, Ring, Earing, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c3.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Men's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c4.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Women's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Skirts, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c5.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Kids Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c6.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Footwear</span></h2>
+                            <p>Shoe, Sandal, Sneaker & more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c7.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Accesories</span></h2>
+                            <p>Watch, Bags, Cover, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c8.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Jewelry</span></h2>
+                            <p>Necklaces, Ring, Earing, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c3.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Men's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c4.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Women's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Skirts, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c5.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Kids Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c6.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Footwear</span></h2>
+                            <p>Shoe, Sandal, Sneaker & more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c7.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Accesories</span></h2>
+                            <p>Watch, Bags, Cover, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c8.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Jewelry</span></h2>
+                            <p>Necklaces, Ring, Earing, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c3.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Men's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c4.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Women's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Skirts, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c5.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Kids Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c6.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Footwear</span></h2>
+                            <p>Shoe, Sandal, Sneaker & more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c7.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Accesories</span></h2>
+                            <p>Watch, Bags, Cover, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c8.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Jewelry</span></h2>
+                            <p>Necklaces, Ring, Earing, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c3.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Men's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c4.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Women's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Skirts, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c5.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Kids Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c6.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Footwear</span></h2>
+                            <p>Shoe, Sandal, Sneaker & more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c7.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Accesories</span></h2>
+                            <p>Watch, Bags, Cover, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c8.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Jewelry</span></h2>
+                            <p>Necklaces, Ring, Earing, more</p>
+                        </div>
+                    </ion-item>
+                </ion-list>
+            </ion-slide>
+
+            <ion-slide>
+                <ion-list lines="none">
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c5.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Kids Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c6.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Footwear</span></h2>
+                            <p>Shoe, Sandal, Sneaker & more</p>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c3.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Men's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c4.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Women's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Skirts, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c5.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Kids Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c6.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Footwear</span></h2>
+                            <p>Shoe, Sandal, Sneaker & more</p>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c3.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Men's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c4.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Women's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Skirts, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c5.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Kids Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c6.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Footwear</span></h2>
+                            <p>Shoe, Sandal, Sneaker & more</p>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c3.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Men's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c4.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Women's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Skirts, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c5.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Kids Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c6.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Footwear</span></h2>
+                            <p>Shoe, Sandal, Sneaker & more</p>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c3.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Men's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c4.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Women's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Skirts, more</p>
+                        </div>
+                    </ion-item>
+                </ion-list>
+            </ion-slide>
+
+            <ion-slide>
+                <ion-list lines="none">
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c6.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Footwear</span></h2>
+                            <p>Shoe, Sandal, Sneaker & more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c3.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Men's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c4.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Women's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Skirts, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c6.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Footwear</span></h2>
+                            <p>Shoe, Sandal, Sneaker & more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c3.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Men's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c4.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Women's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Skirts, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c6.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Footwear</span></h2>
+                            <p>Shoe, Sandal, Sneaker & more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c3.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Men's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c4.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Women's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Skirts, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c6.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Footwear</span></h2>
+                            <p>Shoe, Sandal, Sneaker & more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c3.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Men's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c4.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Women's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Skirts, more</p>
+                        </div>
+                    </ion-item>
+                </ion-list>
+            </ion-slide>
+
+            <ion-slide>
+                <ion-list lines="none">
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c3.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Men's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c4.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Women's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Skirts, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c5.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Kids Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c6.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Footwear</span></h2>
+                            <p>Shoe, Sandal, Sneaker & more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c3.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Men's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c4.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Women's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Skirts, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c5.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Kids Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c6.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Footwear</span></h2>
+                            <p>Shoe, Sandal, Sneaker & more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c3.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Men's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c4.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Women's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Skirts, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c5.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Kids Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c6.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Footwear</span></h2>
+                            <p>Shoe, Sandal, Sneaker & more</p>
+                        </div>
+                    </ion-item>
+                </ion-list>
+            </ion-slide>
+
+            <ion-slide>
+                <ion-list lines="none">
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c5.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Kids Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c6.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Footwear</span></h2>
+                            <p>Shoe, Sandal, Sneaker & more</p>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c3.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Men's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c4.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Women's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Skirts, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c5.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Kids Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c6.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Footwear</span></h2>
+                            <p>Shoe, Sandal, Sneaker & more</p>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c3.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Men's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c4.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Women's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Skirts, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c5.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Kids Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c6.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Footwear</span></h2>
+                            <p>Shoe, Sandal, Sneaker & more</p>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c3.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Men's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c4.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Women's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Skirts, more</p>
+                        </div>
+                    </ion-item>
+                </ion-list>
+            </ion-slide>
+
+            <ion-slide>
+                <ion-list lines="none">
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c3.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Men's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c4.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Women's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Skirts, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c5.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Kids Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c6.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Footwear</span></h2>
+                            <p>Shoe, Sandal, Sneaker & more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c3.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Men's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c4.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Women's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Skirts, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c5.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Kids Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c6.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Footwear</span></h2>
+                            <p>Shoe, Sandal, Sneaker & more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c3.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Men's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c4.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Women's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Skirts, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c5.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Kids Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c6.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Footwear</span></h2>
+                            <p>Shoe, Sandal, Sneaker & more</p>
+                        </div>
+                    </ion-item>
+                </ion-list>
+            </ion-slide>
+
+            <ion-slide>
+                <ion-list lines="none">
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c5.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Kids Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c6.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Footwear</span></h2>
+                            <p>Shoe, Sandal, Sneaker & more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c3.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Men's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c4.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Women's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Skirts, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c5.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Kids Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c6.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Footwear</span></h2>
+                            <p>Shoe, Sandal, Sneaker & more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c3.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Men's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c4.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Women's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Skirts, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c5.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Kids Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c6.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Footwear</span></h2>
+                            <p>Shoe, Sandal, Sneaker & more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c3.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Men's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c4.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Women's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Skirts, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c5.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Kids Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c6.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Footwear</span></h2>
+                            <p>Shoe, Sandal, Sneaker & more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c3.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Men's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Shirt, more</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="item_lists()">
+                        <div class="categories_img" slot="start">
+                            <img src="assets/imgs/c4.png">
+                        </div>
+                        <div class="label">
+                            <h2 class="d-flex"><span>Women's Clothing</span></h2>
+                            <p>T-shirts, Jeans, Skirts, more</p>
+                        </div>
+                    </ion-item>
+                </ion-list>
+            </ion-slide>
+        </ion-slides>
+    </div>
+</ion-content>
